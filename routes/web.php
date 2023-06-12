@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('posts/{post}',function($slug){
     // return $slug;
-    // Find a post by its slug and pass it to a view called "post"
+    // Find a post by its slug and pass it to a view called ""
     $path = __DIR__ ."/../resources/posts/{$slug}.html";
 
     
@@ -30,5 +30,6 @@ Route::get('posts/{post}',function($slug){
         return redirect('/');
     }
     $post= file_get_contents($path);
+    // dd($post);
     return view('post',['post' => $post]);
 });
